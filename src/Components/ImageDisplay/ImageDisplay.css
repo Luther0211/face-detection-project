@@ -1,5 +1,5 @@
-.ImageDisplay {
-    max-width: 90vw;
+#ImageDisplay {
+    max-width: 70vw;
     max-height: 70vh;
     box-sizing: border-box;
 }

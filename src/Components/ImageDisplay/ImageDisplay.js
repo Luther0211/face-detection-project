@@ -1,4 +1,4 @@
 import React from 'react'
 import "./ImageDisplay.css"
 
-export default props => <img className="ImageDisplay" src={props.imageUrl} alt="" />
+export default props => <img id="ImageDisplay" src={props.imageUrl} alt="" />
