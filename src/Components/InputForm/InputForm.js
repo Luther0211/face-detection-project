@@ -1,10 +1,15 @@
 import React from 'react'
+import "./InputForm.css"
 
 export default props => {
     return (
-        <form onSubmit={props.onInputSubmit} >
-            <input type="text"  placeholder="Paste an Image URL!" onChange={props.onInputChange} />
-            <input type="submit" value="Detect" />
+        <form className="form" onSubmit={props.onInputSubmit} >
+
+            <div className="input" >Paste an image url <input type="url"  placeholder="Paste an Image url" onChange={props.onInputChange} /></div>
+            <div className="input" >or</div>
+            <div className="input" >Select a local image <input type="file" /></div>
+            <div className="input" ><input type="submit" value="Detect" /></div>
+
         </form>
     )
 }

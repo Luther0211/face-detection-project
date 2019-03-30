@@ -12,50 +12,45 @@ const app = new Clarifai.App({
    });
 
 class App extends Component {
-
     state = {
         inputUrl: ''
     }
 
-    // eg: "https://samples.clarifai.com/face-det.jpg"
 
-    onInputChangeHandler = (e) => {
-        this.setState({inputUrl: e.target.value})
-        console.log(e.target.value)
-    }
+    onInputChangeHandler = (e) =>  this.setState({inputUrl: e.target.value})
 
     onSubmitHandler = (e) => {
         e.preventDefault()
-        //-------------------CLARIFAI MODEL (FACE DETECTION)
+        //------------------CLARIFAI MODEL (FACE DETECTION)
         app.models.predict("a403429f2ddf4b49b307e318f00e528b", this.state.inputUrl)
             .then(
                 (res) => {
                     this.setState({inputUrl: res.outputs[0].input.data.image.url})
                     console.log(res)
                 },
-                (err) => {console.log(err)}
-            );
-
-        console.log('detecting...')
-        
+                (err) => {
+                    console.log(err)
+                    alert('Image not available')
+                }
+            );    
     }
 
 
-  render() {
-    return (
-        <div className="App">
-            <h1>FACE DETECTOR ONLINE</h1>
-            
-            <InputForm 
-                onInputSubmit={(e) => this.onSubmitHandler(e)} 
-                onInputChange={(e) => this.onInputChangeHandler(e)}
-            />
+    render() {
+        return (
+            <div className="App">
+                <h1>FACE DETECTOR ONLINE</h1>
+                
+                <InputForm 
+                    onInputSubmit={(e) => this.onSubmitHandler(e)} 
+                    onInputChange={(e) => this.onInputChangeHandler(e)}
+                />
 
-            <ImageDisplay imageUrl={this.state.inputUrl} />
-            
-        </div>
-    );
-  }
+                <ImageDisplay imageUrl={this.state.inputUrl} />
+                
+            </div>
+        );
+    }
 }
 
 export default App;
