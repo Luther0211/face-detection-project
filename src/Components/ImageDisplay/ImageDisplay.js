@@ -1,7 +1,7 @@
 import React from 'react'
 import "./ImageDisplay.css"
 
-export default ({imageUrl, boxes }) => {
+export default ({imageUrl, boxes, onFaceBoxClick }) => {
     let results = boxes.map(box => {
         let boxSize = {
             top: box.top, 
@@ -10,7 +10,7 @@ export default ({imageUrl, boxes }) => {
             left: box.left
         }
         console.log(box)
-        return <div className="bounding-box" id={box.id} key={box.id} style={boxSize}></div>
+        return <div className="bounding-box" id={box.id} key={box.id} title={box.id} style={boxSize} onClick={onFaceBoxClick}></div>
     })
 
     return (

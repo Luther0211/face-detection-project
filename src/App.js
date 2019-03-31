@@ -18,6 +18,10 @@ class App extends Component {
     }
 
     // HANDLERS
+    onfaceBoxClickHandler = (e) => { // grabs clicked facebox's id
+        console.log(e.target.id)
+    }
+
     saveResults = (array) => { //---- saves results to state.outputs
         this.setState({outputs: [...array]})
     }
@@ -54,7 +58,7 @@ class App extends Component {
             <div className="App">
                 <h1>IMAGE RECOGNITION AI ONLINE</h1>              
                 <InputForm onInputSubmit={(e) => this.onSubmitHandler(e)} />
-                <ImageDisplay imageUrl={this.state.imageURL} boxes={this.state.boxes} />
+                <ImageDisplay imageUrl={this.state.imageURL} boxes={this.state.boxes} onFaceBoxClick={(e) => this.onfaceBoxClickHandler(e)} />
             </div>
         );
     }
