@@ -1,19 +1,23 @@
 import React from 'react'
 import "./ImageDisplay.css"
 
-export default ({imageUrl, box }) => {
-    let boxSize = {
-        top: box.topRow + '%', 
-        right: box.rightCol + '%', 
-        bottom: box.bottomRow + '%', 
-        left: box.leftCol + '%'
-    }
+export default ({imageUrl, boxes }) => {
+    let results = boxes.map(box => {
+        let boxSize = {
+            top: box.top, 
+            right: box.right, 
+            bottom: box.bottom, 
+            left: box.left
+        }
+        console.log(box)
+        return <div className="bounding-box" id={box.id} key={box.id} style={boxSize}></div>
+    })
 
     return (
         <div className="center ma">
-            <div className="absolute mt2">
-                <img id="ImageDisplay" alt="" src={imageUrl} width='500px' height='auto' />
-                <div className="bounding-box" style={boxSize}></div>
+            <div className="absolute mt2" id="image-display-div">
+                <img id="ImageDisplay" alt="" src={imageUrl} />
+                {results}
             </div>
         </div>
     )
