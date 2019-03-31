@@ -23,7 +23,8 @@ class App extends Component {
     calculateFaceLocation = (data) => {
         console.log(data)
         const faceBox = data.outputs[0].data.regions[0].region_info.bounding_box;
-        
+        document.getElementsByClassName('bounding-box')[0].id = data.outputs[0].data.regions[0].id
+
         return {
             leftCol: faceBox.left_col * 100,
             topRow: faceBox.top_row * 100,
