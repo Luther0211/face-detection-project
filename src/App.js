@@ -20,9 +20,17 @@ class App extends Component {
     }
 
     // HANDLERS
+    saveResults = (array) => {
+        this.setState({outputs: [...array]})
+    }
+
     calculateFaceLocation = (data) => {
-        console.log(data)
+        // console.log(data)
         const faceBox = data.outputs[0].data.regions[0].region_info.bounding_box;
+
+        this.saveResults(data.outputs[0].data.regions)
+        // console.log(this.state)
+
         document.getElementsByClassName('bounding-box')[0].id = data.outputs[0].data.regions[0].id
 
         return {
@@ -35,6 +43,7 @@ class App extends Component {
     
       displayFaceLocation = (box) => {
         this.setState({box: box})
+        console.log(this.state)
       }
     
 
