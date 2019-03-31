@@ -13,46 +13,41 @@ const app = new Clarifai.App({
 
 class App extends Component {
     state = {
-        inputUrl: '',
+        input: '',
+        imageURL: '',
         outputs: [],
-        faceBox: {},
+        box: {},
     }
 
     // HANDLERS
-    calculateFaceBox = (data) => {
-        const image = document.getElementById('ImageDisplay');
-        const dataBox = data.outputs[0].data.regions[0].region_info.bounding_box
-        const width = +image.width
-        const height = +image.height
+    calculateFaceLocation = (data) => {
+        console.log(data)
+        const faceBox = data.outputs[0].data.regions[0].region_info.bounding_box;
         
         return {
-            leftCol: dataBox.left_col * width,
-            topRow: dataBox.top_row * height,
-            rightCol: width - ( dataBox.right_col * width ),
-            bottomRow: height - ( dataBox.bottom_row * height )
+            leftCol: faceBox.left_col * 100,
+            topRow: faceBox.top_row * 100,
+            rightCol: 100 - faceBox.right_col * 100,
+            bottomRow: 100 - faceBox.bottom_row * 100
         }
-    }
+      }
+    
+      displayFaceLocation = (box) => {
+        this.setState({box: box})
+      }
+    
 
-    onResultHandler = (response) => {
-        this.setState({
-            outputs: [...response.outputs[0].data.regions],  
-            faceBox: {...this.calculateFaceBox(response)}
-        })
-        console.log('[STATE]: ', this.state)
-    }
 
-    onErrorHandler = (error) => {
-        console.log(error)
-        alert('Image not available')
-    }
-
-    onInputChangeHandler = (e) => this.setState({inputUrl: e.target.value})
-
-    onSubmitHandler = (e) => {
+      onInputChangeHandler = (event) => {
+        this.setState({input: event.target.value});
+      } 
+    
+      onSubmitHandler = (e) => {
         e.preventDefault()
-        app.models.predict("c0c0ac362b03416da06ab3fa36fb58e3", this.state.inputUrl)
-            .then(res => this.onResultHandler(res))
-            .catch(err => this.onErrorHandler(err))
+        this.setState({imageURL: this.state.input});
+        app.models.predict("c0c0ac362b03416da06ab3fa36fb58e3", this.state.input)
+            .then( res => this.displayFaceLocation(this.calculateFaceLocation(res)))
+            .catch(err => console.log(err))
     }
 
 
@@ -60,13 +55,13 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>IMAGE DETECTOR AI ONLINE</h1>
+                <h1>IMAGE RECOGNITION AI ONLINE</h1>
                 
                 <InputForm 
                     onInputSubmit={(e) => this.onSubmitHandler(e)} 
                     onInputChange={(e) => this.onInputChangeHandler(e)}
                 />
-                <ImageDisplay imageUrl={this.state.inputUrl} />
+                <ImageDisplay imageUrl={this.state.imageURL} box={this.state.box} />
             </div>
         );
     }
