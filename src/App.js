@@ -44,7 +44,8 @@ class App extends Component {
     
       onSubmitHandler = (e) => {
         e.preventDefault()
-        this.setState({imageURL: e.target.children[0].children[0].value, outputs: [], boxes: []});
+        console.log(e.target.children[0].children[1].children[1].value)
+        this.setState({imageURL: e.target.children[0].children[1].children[1].value, outputs: [], boxes: []});
         setTimeout(() => {
             app.models.predict("c0c0ac362b03416da06ab3fa36fb58e3", this.state.imageURL)
             .then( res => this.calculateFaceLocations(res))
@@ -56,7 +57,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>IMAGE RECOGNITION AI ONLINE</h1>              
+                <h1>IMAGE RECOGNITION AI</h1>              
                 <InputForm onInputSubmit={(e) => this.onSubmitHandler(e)} />
                 <ImageDisplay imageUrl={this.state.imageURL} boxes={this.state.boxes} onFaceBoxClick={(e) => this.onfaceBoxClickHandler(e)} />
             </div>

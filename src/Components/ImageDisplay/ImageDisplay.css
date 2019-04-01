@@ -1,6 +1,7 @@
 #ImageDisplay {
-    width: 90vw;
-    height: auto;
+    /* width: 75vw; */
+    max-width: 75vw;
+    max-height: 50vh;
 }
 
 .bounding-box {
