@@ -1,0 +1,19 @@
+.top-section {
+    background-color: rgb(235, 235, 235);
+}
+
+.top-title {
+    margin: 0;
+    padding: 15px 0;
+    font-size: 4vh;
+    font-family: monospace, sans-serif;
+}
+
+.url-TextField {
+    width: 95vw;
+    margin: 8;
+}
+
+.submit-btn {
+    margin: 15px !important;
+}

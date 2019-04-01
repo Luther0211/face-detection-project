@@ -3,7 +3,7 @@ import './App.css';
 import Clarifai from 'clarifai';
 
 //COMPONENT IMPORTS
-import InputForm from "./Components/InputForm/InputForm"
+import DemographicsForm from "./Components/DemographicsForm/DemographicsForm"
 import ImageDisplay from "./Components/ImageDisplay/ImageDisplay"
 
 const app = new Clarifai.App({
@@ -56,9 +56,8 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <h1>IMAGE RECOGNITION AI</h1>              
-                <InputForm onInputSubmit={(e) => this.onSubmitHandler(e)} />
+            <div className="App">             
+                <DemographicsForm onInputSubmit={(e) => this.onSubmitHandler(e)} />
                 <ImageDisplay imageUrl={this.state.imageURL} boxes={this.state.boxes} onFaceBoxClick={(e) => this.onfaceBoxClickHandler(e)} />
             </div>
         );
