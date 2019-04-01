@@ -16,3 +16,7 @@
 .bounding-box:hover {
     box-shadow: 0 0 0 3px #d31313 inset;
 }
+
+.active {
+    box-shadow: 0 0 0 3px #d31313 inset;
+}

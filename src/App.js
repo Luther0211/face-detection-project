@@ -6,6 +6,7 @@ import Clarifai from 'clarifai';
 import DemographicsForm from "./Components/DemographicsForm/DemographicsForm"
 import ImageDisplay from "./Components/ImageDisplay/ImageDisplay"
 
+
 const app = new Clarifai.App({
     apiKey: '9a8585cb625d4219b1acedf7c71116f4'
    });
@@ -15,10 +16,15 @@ class App extends Component {
         imageURL: '',
         outputs: [],
         boxes: [],
+        activeOutput: {}
     }
 
     // HANDLERS
     onfaceBoxClickHandler = (e) => { // grabs clicked facebox's id
+        window.document.querySelectorAll(".bounding-box").forEach(el => {
+            el.classList.remove("active")
+        })
+        e.target.classList.add("active")     
         console.log(e.target.id)
     }
 
