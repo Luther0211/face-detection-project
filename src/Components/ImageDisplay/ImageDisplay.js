@@ -14,11 +14,34 @@ export default ({imageUrl, boxes, onFaceBoxClick }) => {
     })
 
     return (
-        <div className="center ma">
-            <div className="absolute mt2" id="image-display-div">
-                <img id="ImageDisplay" alt="" src={imageUrl} />
-                {results}
+        <div className="center">
+            <div className="main">
+
+                <div className="one">
+                    <div className="absolute">
+                        <img id="ImageDisplay" src={imageUrl} alt="" />
+                        {results}
+                    </div>
+                </div>
+
+                <div className="two"></div>
+
             </div>
         </div>
+        
+
+
+        //  <div className="center absolute mt2" id="image-display-div">
+    
+        //     <div class="main">
+        //         <div class="one">
+        //             <img id="ImageDisplay" src={imageUrl} alt="" />
+        //             {results}
+        //         </div>
+        //         <div class="two"></div>
+        //     </div>  
+    
+        // </div>
+
     )
 }

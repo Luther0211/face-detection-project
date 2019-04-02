@@ -1,7 +1,25 @@
+.main {
+    max-width: 1200px;
+    width: 80vw;
+    border: 5px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.one {
+    background-color: blue;
+    min-height: 320px;
+    min-width: 70%;
+    flex-grow: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+  
 #ImageDisplay {
-    /* width: 75vw; */
-    max-width: 75vw;
-    max-height: 50vh;
+    max-height: 300px !important;
+    max-width: 100%;
 }
 
 .bounding-box {
@@ -11,6 +29,7 @@
     flex-wrap: wrap;
     justify-content: center;
     cursor: pointer;
+    position: absolute;
 }
 
 .bounding-box:hover {
@@ -19,4 +38,11 @@
 
 .active {
     box-shadow: 0 0 0 3px #d31313 inset;
+}
+  
+.two {
+    background-color: red;
+    min-height: 500px;
+    min-width: 200px;
+    flex-grow: 1;
 }
