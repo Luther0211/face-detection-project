@@ -1,5 +1,6 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import "./ImageDisplay.css"
+import AgeComponent from './Age/Age'
 
 export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
     let results = boxes.map(box => {
@@ -15,16 +16,10 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
     let age = null
 
     if(activeFaceData !== null) {
-        console.log(activeFaceData.age_appearance.concepts[0])
-        age = (
-            <Fragment>
-                <h1>Age</h1>
-                <div className="data-bar">
-                    <span className="data">{activeFaceData.age_appearance.concepts[0].name} years old</span>
-                    <span className="data">{Math.ceil(activeFaceData.age_appearance.concepts[0].value * 100)}%</span>
-                </div>
-            </Fragment>
-        )
+        age = activeFaceData.age_appearance.concepts.map((concept, i) => {
+            if(i < 5) return <AgeComponent age={concept.name} percentage={concept.value} key={i}/>
+        })
+        age.unshift(<h2 key="agekey">Age</h2>)
     }
 
     return (
