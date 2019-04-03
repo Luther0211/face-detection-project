@@ -60,7 +60,7 @@ class App extends Component {
       onSubmitHandler = (e) => {
         e.preventDefault()
         
-        this.setState({imageURL: e.target.children[0].children[1].children[1].value, outputs: [], boxes: []});
+        this.setState({imageURL: e.target.children[0].children[1].children[1].value, outputs: [], boxes: [], activeOutput: null});
         setTimeout(() => {
             app.models.predict("c0c0ac362b03416da06ab3fa36fb58e3", this.state.imageURL)
             .then( res => this.calculateFaceLocations(res))

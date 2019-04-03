@@ -17,7 +17,7 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
 
     if(activeFaceData !== null) {
         age = activeFaceData.age_appearance.concepts.map((concept, i) => {
-            if(i < 5) return <AgeComponent age={concept.name} percentage={concept.value} key={i}/>
+            if(i < 5) return <AgeComponent age={concept.name} percentage={concept.value} key={i} index={i} />
         })
         age.unshift(<h2 key="agekey">Age</h2>)
     }
