@@ -1,6 +1,6 @@
 import React from "react"
 
-import "./Age.css"
+import "./AgeComponent.css"
 
 export default ({age, percentage, index}) => {
     switch(true) {
