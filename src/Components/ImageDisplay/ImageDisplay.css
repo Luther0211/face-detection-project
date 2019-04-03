@@ -1,13 +1,15 @@
 .main {
     max-width: 1200px;
     width: 80vw;
-    border: 5px solid black;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
+    border: 5px solid rgb(70, 86, 139);
+    margin-bottom: 100px;
 }
 
 .one {
-    background-color: blue;
+    background-color: rgb(39, 39, 39);
     min-height: 320px;
     min-width: 70%;
     flex-grow: 6;
@@ -41,8 +43,8 @@
 }
   
 .two {
-    background-color: red;
-    min-height: 500px;
+    background-color: rgb(235, 235, 235);
+    min-height: 450px;
     min-width: 200px;
     flex-grow: 1;
 }

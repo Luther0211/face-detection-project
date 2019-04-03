@@ -1,8 +1,17 @@
 .App {
   text-align: center;
+  background-color: rgb(36, 43, 80);
+  height: 100vh;
+  display: table;
 }
 
 .center{
     display: flex;
     justify-content: center;
-  }
+}
+
+.message {
+    color: rgb(235, 235, 235);
+    font-size: 30px;
+    font-family: monospace, sans-serif;
+}

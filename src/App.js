@@ -61,9 +61,15 @@ class App extends Component {
 
 
     render() {
+        let msg = <p className="message">&nbsp;</p>
+        if(this.state.boxes.length > 0) {
+            msg = <p className="message">Click on a face!</p>
+        }
+
         return (
             <div className="App">             
                 <DemographicsForm onInputSubmit={(e) => this.onSubmitHandler(e)} />
+                {msg}
                 <ImageDisplay imageUrl={this.state.imageURL} boxes={this.state.boxes} onFaceBoxClick={(e) => this.onfaceBoxClickHandler(e)} />
             </div>
         );
