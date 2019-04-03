@@ -1,8 +1,7 @@
 import React from 'react'
 import "./ImageDisplay.css"
 //COMPONENTS
-import AgeComponent from './Age/AgeComponent'
-import GenderComponent from "./GenderComponent/GenderComponent"
+import DataComponent from "./DataComponent/DataComponent"
 
 export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
     let age_appearance = null
@@ -22,16 +21,16 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
     })
 
 
-    if(activeFaceData !== null) {
+    if(activeFaceData !== null) { // COMBINE COMPONENTS!
         //AGE
-        age_appearance = activeFaceData.age_appearance.concepts.map((ageConcept, i) => {
-            if(i < 5) return <AgeComponent age={ageConcept.name} percentage={ageConcept.value} key={i} index={i} />
+        age_appearance = activeFaceData.age_appearance.concepts.map((age, i) => {
+            if(i < 5) return <DataComponent dataName={age.name + " years old"} percentage={age.value} key={i} index={i} />
         })
         age_appearance.unshift(<h2 key="agekey" className="data-title">Age</h2>)
 
         //GENDER
-        gender_appearance = activeFaceData.gender_appearance.concepts.map((genderConcept, i) => {
-            return <GenderComponent gender={genderConcept.name} percentage={genderConcept.value} key={i} index={i} />
+        gender_appearance = activeFaceData.gender_appearance.concepts.map((gender, i) => {
+            return <DataComponent dataName={gender.name} percentage={gender.value} key={i} index={i} />
         })
         gender_appearance.unshift(<h2 key="genderkey" className="data-title">Gender</h2>)
     }

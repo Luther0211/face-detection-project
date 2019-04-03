@@ -35,15 +35,16 @@
 }
 
 .bounding-box:hover {
-    box-shadow: 0 0 0 3px #d31313 inset;
+    box-shadow: 0 0 0 5px #d31313 inset;
 }
 
 .active {
-    box-shadow: 0 0 0 3px #d31313 inset;
+    box-shadow: 0 0 0 5px #d31313 inset;
 }
   
 .two {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(70, 86, 139);
+    padding-left: 5px;
     min-height: 450px;
     min-width: 200px;
     flex-grow: 1;

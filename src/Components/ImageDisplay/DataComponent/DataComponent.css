@@ -1,0 +1,13 @@
+.data-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 10px;
+}
+
+.odd {
+    background-color: rgb(46, 63, 119);
+}
+
+.data-tag {
+    color: rgb(235, 235, 235);
+}
