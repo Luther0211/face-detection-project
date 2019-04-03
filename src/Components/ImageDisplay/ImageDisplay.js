@@ -9,7 +9,6 @@ export default ({imageUrl, boxes, onFaceBoxClick }) => {
             bottom: box.bottom, 
             left: box.left
         }
-        console.log(box)
         return <div className="bounding-box" id={box.id} key={box.id} title={box.id} style={boxSize} onClick={onFaceBoxClick}></div>
     })
 

@@ -26,6 +26,13 @@ class App extends Component {
         })
         e.target.classList.add("active")     
         console.log(e.target.id)
+
+        this.state.outputs.forEach(output => {
+            if(output.id === e.target.id) {
+                console.log(output.data.face)
+            }
+        })
+
     }
 
     saveResults = (array) => { //---- saves results to state.outputs
