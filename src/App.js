@@ -16,11 +16,13 @@ class App extends Component {
         imageURL: '',
         outputs: [],
         boxes: [],
-        activeOutput: {}
+        activeOutput: null
     }
 
     // HANDLERS
     onfaceBoxClickHandler = (e) => { // grabs clicked facebox's id
+        let data = {}
+
         window.document.querySelectorAll(".bounding-box").forEach(el => {
             el.classList.remove("active")
         })
@@ -29,10 +31,10 @@ class App extends Component {
 
         this.state.outputs.forEach(output => {
             if(output.id === e.target.id) {
-                console.log(output.data.face)
+                data = {...output.data.face}
             }
         })
-
+        this.setState({activeOutput: data})
     }
 
     saveResults = (array) => { //---- saves results to state.outputs
@@ -57,7 +59,7 @@ class App extends Component {
     
       onSubmitHandler = (e) => {
         e.preventDefault()
-        console.log(e.target.children[0].children[1].children[1].value)
+        
         this.setState({imageURL: e.target.children[0].children[1].children[1].value, outputs: [], boxes: []});
         setTimeout(() => {
             app.models.predict("c0c0ac362b03416da06ab3fa36fb58e3", this.state.imageURL)
@@ -77,7 +79,7 @@ class App extends Component {
             <div className="App">             
                 <DemographicsForm onInputSubmit={(e) => this.onSubmitHandler(e)} />
                 {msg}
-                <ImageDisplay imageUrl={this.state.imageURL} boxes={this.state.boxes} onFaceBoxClick={(e) => this.onfaceBoxClickHandler(e)} />
+                <ImageDisplay imageUrl={this.state.imageURL} boxes={this.state.boxes} onFaceBoxClick={(e) => this.onfaceBoxClickHandler(e)} activeFaceData={this.state.activeOutput} />
             </div>
         );
     }
