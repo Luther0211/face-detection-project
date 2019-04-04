@@ -4,22 +4,28 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
-    border: 5px solid rgb(70, 86, 139);
     margin-bottom: 100px;
+    border: 5px solid rgb(70, 86, 139);
 }
 
 .one {
     background-color: rgb(39, 39, 39);
     min-height: 320px;
     min-width: 50%;
-    flex-grow: 6;
+    /* padding: 0 2%; */
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
+
+.image-div {
+  position: absolute;
+}
   
 #ImageDisplay {
+    width: 100%;
     max-height: 300px !important;
 }
 

@@ -9,10 +9,12 @@
 }
 
 .data-title {
-    margin: 10px 0 0 0;
+    margin: 3px 0 0 0;
+    font-size: 24px;
 }
 
 .data-instr {
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
     margin: 0 10px 5px 10px;
@@ -22,4 +24,5 @@
 .data-tag {
     color: rgb(235, 235, 235);
     text-align: start;
+    font-size: 16px;
 }
