@@ -26,18 +26,21 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
         age_appearance = activeFaceData.age_appearance.concepts.map((age, i) => {
             if(i < 5) return <DataComponent dataName={age.name + " years old"} percentage={age.value} key={i} index={i} />
         })
+        age_appearance.unshift(<div className="data-instr"> <span>Result</span> <span>Probability %</span> </div>)
         age_appearance.unshift(<h2 key="agekey" className="data-title">Age</h2>)
 
         //GENDER
         gender_appearance = activeFaceData.gender_appearance.concepts.map((gender, i) => {
             return <DataComponent dataName={gender.name} percentage={gender.value} key={i} index={i} />
         })
+        gender_appearance.unshift(<div className="data-instr"> <span>Result</span> <span>Probability %</span> </div>)
         gender_appearance.unshift(<h2 key="genderkey" className="data-title">Gender</h2>)
 
         //multicultural Appearance
         multicultural_appearance = activeFaceData.multicultural_appearance.concepts.map((culturalAp, i) => {
             return <DataComponent dataName={culturalAp.name} percentage={culturalAp.value} index={i} key={i} />
         })
+        multicultural_appearance.unshift(<div className="data-instr"> <span>Result</span> <span>Probability %</span> </div>)
         multicultural_appearance.unshift(<h2 key="culturalkey" className="data-title">Multicultural Appearance</h2>)
     }
 

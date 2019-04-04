@@ -1,11 +1,22 @@
 .data-bar {
     display: flex;
     justify-content: space-between;
-    padding: 2px 10px;
+    padding: 2.7px 10px 2.7px 10px;
 }
 
 .odd {
     background-color: rgb(46, 63, 119);
+}
+
+.data-title {
+    margin: 10px 0 0 0;
+}
+
+.data-instr {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px 5px 10px;
+    border-bottom: 1px solid rgb(46, 63, 119);
 }
 
 .data-tag {
