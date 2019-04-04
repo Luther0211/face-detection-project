@@ -6,7 +6,7 @@ import DataComponent from "./DataComponent/DataComponent"
 export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
     let age_appearance = null
     let gender_appearance = null
-    // let multicultural_appearance = null
+    let multicultural_appearance = null
      
     console.log(activeFaceData)
 
@@ -33,6 +33,12 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
             return <DataComponent dataName={gender.name} percentage={gender.value} key={i} index={i} />
         })
         gender_appearance.unshift(<h2 key="genderkey" className="data-title">Gender</h2>)
+
+        //multicultural Appearance
+        multicultural_appearance = activeFaceData.multicultural_appearance.concepts.map((culturalAp, i) => {
+            return <DataComponent dataName={culturalAp.name} percentage={culturalAp.value} index={i} key={i} />
+        })
+        multicultural_appearance.unshift(<h2 key="culturalkey" className="data-title">Multicultural Appearance</h2>)
     }
 
     return (
@@ -49,6 +55,7 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
                 <div className="two">
                     {age_appearance}
                     {gender_appearance}
+                    {multicultural_appearance}
                 </div>
 
             </div>
