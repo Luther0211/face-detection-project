@@ -25,9 +25,12 @@
 }
   
 #ImageDisplay {
-    width: 100%;
-    max-width: 450px;
-    max-height: 300px !important;
+    /* width: 100%; */
+    /* max-width: 450px;
+    max-height: 300px !important; */
+    max-width: 100%;
+    max-height: -webkit-fill-available;
+    
 }
 
 .bounding-box {

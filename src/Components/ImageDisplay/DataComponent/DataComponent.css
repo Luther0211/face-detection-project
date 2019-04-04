@@ -21,6 +21,14 @@
     border-bottom: 1px solid rgb(46, 63, 119);
 }
 
+.appearance {
+    text-align: start;
+}
+
+.probability {
+    text-align: end;
+}
+
 .data-tag {
     color: rgb(235, 235, 235);
     text-align: start;
