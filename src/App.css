@@ -11,6 +11,10 @@
     justify-content: center;
 }
 
+.absolute {
+    position: absolute;
+}
+
 .message {
     color: rgb(235, 235, 235);
     font-size: 30px;
