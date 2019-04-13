@@ -10,7 +10,7 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
      
     console.log(activeFaceData)
 
-    let results = boxes.map(box => {
+    let boxResults = boxes.map(box => {
         let boxSize = {
             top: box.top, 
             right: box.right, 
@@ -46,23 +46,23 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
     }
 
     return (
-        <div className="center">
-            <div className="main">
+        <div className="results">
+            
+            <div className="result result-image">
 
-                <div className="one">
-                    <div className="image-div">
-                        <img id="ImageDisplay" src={imageUrl} alt="" />
-                        {results}
-                    </div>
+                <div className="image-div">
+                    <img id="ImageDisplay" src={imageUrl} alt="" />
+                    {boxResults}
                 </div>
-
-                <div className="two">
-                    {age_appearance}
-                    {gender_appearance}
-                    {multicultural_appearance}
-                </div>
-
+               
             </div>
+
+            <div className="result result-data">
+                {age_appearance}
+                {gender_appearance}
+                {multicultural_appearance}
+            </div>
+
         </div>
     )
 }
