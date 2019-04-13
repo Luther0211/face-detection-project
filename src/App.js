@@ -15,10 +15,41 @@ const app = new Clarifai.App({
 class App extends Component {
     
     render() {
+
+        const routes = (
+            <div>
+                
+                <div>
+                    <Link to="/demographics">Demographics</Link>
+                </div>
+
+                <div>
+                    <Link to="/colors">Colors</Link>
+                </div>
+
+                <div>
+                    <Link to="/food">Food</Link>
+                </div>
+
+                <div>
+                    <Link to="/celebrities">elebrities</Link>
+                </div>
+
+                <div>
+                    <Link to="/general">General</Link>
+                </div>
+
+            </div>
+        )
+
         return (
             <Switch>
                 <Route path="/demographics" component={() => <DemographicsComponent app={app}/>} />
-                <Route path="/" exact render={() => <Link to="/demographics">Demographics</Link>} />
+                <Route path="/colors" render={() => <Link to="/">home</Link>} />
+                <Route path="/food" render={() => <Link to="/">home</Link>} />
+                <Route path="/celebrities" render={() => <Link to="/">home</Link>} />
+                <Route path="/general" render={() => <Link to="/">home</Link>} />
+                <Route path="/" exact render={() => routes} />
                 <Redirect to="/" />
             </Switch>
         )
