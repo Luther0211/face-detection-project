@@ -1,10 +1,13 @@
 import React from 'react'
+import {Link} from "react-router-dom";
+
 import { TextField, Button } from "@material-ui/core";
 import "./DemographicsForm.css"
 
 export default props => {
     return (
         <div className="top-section">
+            <Link to="/">HOME</Link>
             <h1 className="top-title">DEMOGRAPHICS RECOGNITION A.I.</h1>
             <form className="form" onSubmit={props.onInputSubmit} >
                 <TextField className="url-TextField" label="Image url" placeholder="Paste an image url!" variant="outlined" InputLabelProps={{ shrink: true}} />

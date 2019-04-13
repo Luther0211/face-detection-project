@@ -1,5 +1,5 @@
 import React from 'react'
-import "./ImageDisplay.css"
+import "./DemographicsResults.css"
 //COMPONENTS
 import DataComponent from "./DataComponent/DataComponent"
 
@@ -8,8 +8,6 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
     let gender_appearance = null
     let multicultural_appearance = null
      
-    console.log(activeFaceData)
-
     let boxResults = boxes.map(box => {
         let boxSize = {
             top: box.top, 
@@ -51,7 +49,7 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
             <div className="result result-image">
 
                 <div className="image-div">
-                    <img id="ImageDisplay" src={imageUrl} alt="" />
+                    <img id="DemographicsResults" src={imageUrl} alt="" />
                     {boxResults}
                 </div>
                
