@@ -4,8 +4,8 @@ import './App.css';
 import Clarifai from 'clarifai';
 
 //COMPONENT IMPORTS
-import 
-Demographics from "./Components/Demographics/Demographics";
+import Demographics from "./Components/Demographics/Demographics";
+import Colors from "./Components/Colors/Colors";
 
 
 const app = new Clarifai.App({
@@ -45,7 +45,7 @@ class App extends Component {
         return (
             <Switch>
                 <Route path="/demographics" component={() => <Demographics app={app}/>} />
-                <Route path="/colors" render={() => <Link to="/">home</Link>} />
+                <Route path="/colors" component={() => <Colors app={app} />} />
                 <Route path="/food" render={() => <Link to="/">home</Link>} />
                 <Route path="/celebrities" render={() => <Link to="/">home</Link>} />
                 <Route path="/general" render={() => <Link to="/">home</Link>} />
