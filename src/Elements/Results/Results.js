@@ -1,6 +1,5 @@
 import React from 'react'
 import "./Results.css"
-//COMPONENTS
 
 export default (props) => {
     return (
@@ -16,7 +15,8 @@ export default (props) => {
             </div>
 
             <div className="result result-data">
-                {props.resultData}
+                {props.DemographicsData}
+                {props.ColorsData}
             </div>
 
         </div>

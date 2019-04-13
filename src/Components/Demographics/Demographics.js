@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 //Components
 import Form from "../../Elements/Form/Form";
-import Results from "./Results/Results";
-import Data from "./Results/Data/Data"
+import Results from "../../Elements/Results/Results";
+import Data from "./Data/Data"
 
 
 class Demographics extends Component {
@@ -85,7 +85,7 @@ class Demographics extends Component {
         let age_appearance = null
         let gender_appearance = null
         let multicultural_appearance = null
-        let resultData = null
+        let DemographicsData = null
 
         if (this.state.activeOutput !== null) {
             //AGE
@@ -112,7 +112,7 @@ class Demographics extends Component {
             
             //Final
             console.log(this.state.activeOutput)
-            resultData = [...age_appearance, ...gender_appearance, ...multicultural_appearance]
+            DemographicsData = [...age_appearance, ...gender_appearance, ...multicultural_appearance]
         }
 
 
@@ -130,7 +130,7 @@ class Demographics extends Component {
                 <Results 
                     imageUrl={this.state.imageURL} 
                     boxes={boxResults}
-                    resultData={resultData} 
+                    DemographicsData={DemographicsData} 
                 />
                 
             </div>
