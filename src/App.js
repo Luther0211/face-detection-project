@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Route, Switch, withRouter, Redirect, Link } from 'react-router-dom';
+import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import './App.css';
 import Clarifai from 'clarifai';
 
 //COMPONENT IMPORTS
 import 
-DemographicsComponent from "./Components/DemographicsComponent/DemographicsComponent";
+Demographics from "./Components/Demographics/Demographics";
 
 
 const app = new Clarifai.App({
@@ -20,23 +20,23 @@ class App extends Component {
             <div>
                 
                 <div>
-                    <Link to="/demographics">Demographics</Link>
+                    <Link to="/demographics"><h1>Demographics</h1></Link>
                 </div>
 
                 <div>
-                    <Link to="/colors">Colors</Link>
+                    <Link to="/colors"><h1>Colors</h1></Link>
                 </div>
 
                 <div>
-                    <Link to="/food">Food</Link>
+                    <Link to="/food"><h1>Food</h1></Link>
                 </div>
 
                 <div>
-                    <Link to="/celebrities">Celebrities</Link>
+                    <Link to="/celebrities"><h1>Celebrities</h1></Link>
                 </div>
 
                 <div>
-                    <Link to="/general">General</Link>
+                    <Link to="/general"><h1>General</h1></Link>
                 </div>
 
             </div>
@@ -44,7 +44,7 @@ class App extends Component {
 
         return (
             <Switch>
-                <Route path="/demographics" component={() => <DemographicsComponent app={app}/>} />
+                <Route path="/demographics" component={() => <Demographics app={app}/>} />
                 <Route path="/colors" render={() => <Link to="/">home</Link>} />
                 <Route path="/food" render={() => <Link to="/">home</Link>} />
                 <Route path="/celebrities" render={() => <Link to="/">home</Link>} />

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 //Components
-import DemographicsForm from "./DemographicsForm/DemographicsForm";
-import DemographicsResults from "./DemographicsResults/DemographicsResults";
+import Form from "../../Elements/Form/Form";
+import Results from "./Results/Results";
 
 
-class DemographicsComponent extends Component {
+class Demographics extends Component {
     state = {
         imageURL: '',
         outputs: [],
@@ -70,12 +70,24 @@ class DemographicsComponent extends Component {
 
         return (
             <div className="App"> 
-                <DemographicsForm onInputSubmit={(e) => this.onSubmitHandler(e)} />
+                
+                <Form 
+                    onInputSubmit={(e) => this.onSubmitHandler(e)}
+                    title="Demographics"
+                />
+
                 {msg}
-                <DemographicsResults imageUrl={this.state.imageURL} boxes={this.state.boxes} onFaceBoxClick={(e) => this.onfaceBoxClickHandler(e)} activeFaceData={this.state.activeOutput} />
+                
+                <Results 
+                    imageUrl={this.state.imageURL} 
+                    boxes={this.state.boxes} 
+                    onFaceBoxClick={(e) => this.onfaceBoxClickHandler(e)} 
+                    activeFaceData={this.state.activeOutput} 
+                />
+                
             </div>
         );
     }
 }
 
-export default DemographicsComponent;
+export default Demographics;

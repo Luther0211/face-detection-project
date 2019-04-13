@@ -1,7 +1,7 @@
 import React from 'react'
-import "./DemographicsResults.css"
+import "./Results.css"
 //COMPONENTS
-import DataComponent from "./DataComponent/DataComponent"
+import Data from "./Data/Data"
 
 export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
     let age_appearance = null
@@ -22,7 +22,7 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
     if(activeFaceData !== null) { // COMBINE COMPONENTS!
         //AGE
         age_appearance = activeFaceData.age_appearance.concepts.map((age, i) => i < 5 
-            ? <DataComponent dataName={age.name + " years old"} percentage={age.value} key={i} index={i} /> 
+            ? <Data dataName={age.name + " years old"} percentage={age.value} key={i} index={i} /> 
             : null    
         )
         age_appearance.unshift(<div className="data-instr" key="data-instr-age"> <span className="appearance">Age Appearance</span> <span className="probability">Probability %</span> </div>)
@@ -30,14 +30,14 @@ export default ({imageUrl, boxes, onFaceBoxClick, activeFaceData }) => {
 
         //GENDER
         gender_appearance = activeFaceData.gender_appearance.concepts.map((gender, i) => {
-            return <DataComponent dataName={gender.name} percentage={gender.value} key={i} index={i} />
+            return <Data dataName={gender.name} percentage={gender.value} key={i} index={i} />
         })
         gender_appearance.unshift(<div className="data-instr" key="data-instr-gender"> <span className="appearance">Gender Appearance</span> <span className="probability">Probability %</span> </div>)
         gender_appearance.unshift(<h2 key="genderkey" className="data-title">Gender</h2>)
 
         //multicultural Appearance
         multicultural_appearance = activeFaceData.multicultural_appearance.concepts.map((culturalAp, i) => {
-            return <DataComponent dataName={culturalAp.name} percentage={culturalAp.value} index={i} key={i} />
+            return <Data dataName={culturalAp.name} percentage={culturalAp.value} index={i} key={i} />
         })
         multicultural_appearance.unshift(<div className="data-instr" key="data-instr-cultural"> <span className="appearance">Multicultural Appearance</span> <span className="probability">Probability %</span> </div>)
         multicultural_appearance.unshift(<h2 key="culturalkey" className="data-title">Multicultural Appearance</h2>)

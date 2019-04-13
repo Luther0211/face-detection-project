@@ -1,5 +1,5 @@
 import React from 'react'
-import "./DataComponent.css"
+import "./Data.css"
 
 export default ({dataName, percentage, index}) => {
     switch(true) {
