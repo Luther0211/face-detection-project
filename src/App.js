@@ -32,7 +32,7 @@ class App extends Component {
                 </div>
 
                 <div>
-                    <Link to="/celebrities">elebrities</Link>
+                    <Link to="/celebrities">Celebrities</Link>
                 </div>
 
                 <div>
@@ -57,4 +57,4 @@ class App extends Component {
     
 }
 
-export default withRouter(App);
+export default App;
