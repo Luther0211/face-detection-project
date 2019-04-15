@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import "./Colors.css"
 //Elements
 import Form from "../../Elements/Form/Form";
 import Results from "../../Elements/Results/Results";
+import Data from "./Data/Data"
 
 class Colors extends Component {
     state = {
@@ -15,11 +15,13 @@ class Colors extends Component {
     displayResultColors = (array) => {
         console.log(array)
         const colors = array.map(color => (
-            <div className="color-bar" style={{height: `${color.value * 100}%`, backgroundColor: `${color.raw_hex}`}} key={color.value} >
-                <span className="color-data">{color.w3c.name}</span>
-                <span className="color-data">{color.raw_hex}</span>
-                <span className="color-data">{Math.round(color.value * 100)}%</span>
-            </div>
+            <Data 
+                style={{height: `${color.value * 100}%`, backgroundColor: `${color.raw_hex}`}} 
+                key={color.value}
+                name={color.w3c.name}
+                hex={color.raw_hex}
+                colorValue={Math.round(color.value * 100)}
+            />
         ))
 
         this.setState({outputs: array, display: colors})
