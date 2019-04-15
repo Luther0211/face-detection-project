@@ -14,7 +14,7 @@ export default (props) => {
                
             </div>
 
-            <div className="result result-data">
+            <div className="result result-data" style={{height: `${props.fixedHeight}`}}>
                 {props.DemographicsData}
                 {props.ColorsData}
             </div>
