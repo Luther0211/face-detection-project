@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,800');
+
 .color-bar {
     width: 100%;
     color: #fff;
-    /* font-size: 50px; */
+    font-family: 'Prompt', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
     padding: 5px 0;
     display: flex;
     justify-content: space-between;

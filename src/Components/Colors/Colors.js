@@ -7,7 +7,8 @@ import Results from "../../Elements/Results/Results";
 class Colors extends Component {
     state = {
         imageURL: '',
-        outputs: []
+        outputs: [],
+        display: []
     }
 
 
@@ -21,7 +22,7 @@ class Colors extends Component {
             </div>
         ))
 
-        this.setState({outputs: colors})
+        this.setState({outputs: array, display: colors})
     }
 
 
@@ -53,7 +54,7 @@ class Colors extends Component {
                 
                 <Results 
                     imageUrl={this.state.imageURL} 
-                    ColorsData={this.state.outputs}
+                    ColorsData={this.state.display}
                     fixedHeight='600px' 
                 />
                 
