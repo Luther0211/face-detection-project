@@ -3,7 +3,7 @@ import "./Results.css"
 
 export default (props) => {
     let result =         
-        <div className="results" style={{visibility: "hidden"}}>
+        <div className="results" style={{display: "none"}}>
                 
             <div className="result result-image">
 
