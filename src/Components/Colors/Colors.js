@@ -13,7 +13,10 @@ class Colors extends Component {
 
 
     displayResultColors = (array) => {
+        array.sort((a, b) =>  b.value - a.value );
+        
         console.log(array)
+
         const colors = array.map(color => (
             <Data 
                 style={{height: `${color.value * 100}%`, backgroundColor: `${color.raw_hex}`}} 
