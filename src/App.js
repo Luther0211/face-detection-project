@@ -6,6 +6,7 @@ import Clarifai from 'clarifai';
 //COMPONENT IMPORTS
 import Demographics from "./Components/Demographics/Demographics";
 import Colors from "./Components/Colors/Colors";
+import MainMenu from "./Elements/mainMenu/mainMenu";
 
 
 const app = new Clarifai.App({
@@ -15,33 +16,18 @@ const app = new Clarifai.App({
 class App extends Component {
     
     render() {
-
+        
         const routes = (
-            <div>
-                
-                <div>
-                    <Link to="/demographics"><h1>Demographics</h1></Link>
-                </div>
-
-                <div>
-                    <Link to="/colors"><h1>Colors</h1></Link>
-                </div>
-
-                <div>
-                    <Link to="/food"><h1>Food</h1></Link>
-                </div>
-
-                <div>
-                    <Link to="/celebrities"><h1>Celebrities</h1></Link>
-                </div>
-
-                <div>
-                    <Link to="/general"><h1>General</h1></Link>
-                </div>
-
+            <div className="menu">    
+                <MainMenu route='/demographics' title='Demographics' backgroundImage={'https://mumbrella.com.au/wp-content/uploads/2017/10/ThinkstockPhotos-587785374.jpg'} isActive={true} />
+                <MainMenu route='/colors' title='Colors' backgroundImage={'http://joco.name/wp-content/uploads/2014/03/rgb_2048_1.png'} />
+                <MainMenu route='/' title='Coming Soon' />
+                <MainMenu route='/' title='Coming Soon' />
+                <MainMenu route='/' title='Coming Soon' />
+                <MainMenu route='/' title='Coming Soon' />
             </div>
         )
-
+        
         return (
             <Switch>
                 <Route path="/demographics" component={() => <Demographics app={app}/>} />
