@@ -7,7 +7,7 @@ export default props => {
 
     if(!props.backgroundImage) {
         return (
-            <Link to={props.route} className="Link">
+            <Link to={props.route} className="menu-option">
                 <div className="card" style={{backgroundColor: `black`  }} >
                     <p className="card-title title" style={{backgroundColor: 'crimson'}}>{props.title}</p>
                 </div>
@@ -16,7 +16,7 @@ export default props => {
 
     } else {        
         return (
-            <Link to={props.route} className="Link">
+            <Link to={props.route} className="menu-option">
                 <div className="card" style={{backgroundImage: `url(${props.backgroundImage})`  }} >
                     <p className="card-title title">{props.title}</p>
                 </div>

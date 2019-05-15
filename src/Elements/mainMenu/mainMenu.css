@@ -13,10 +13,6 @@
     transition: all .4s;
   /*   -webkit-text-stroke: 1px white; */
   }
-  
-  .Link {
-      margin: 15px;
-  }
 
   .card {
     width: 200px;
@@ -51,4 +47,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     transition: all .4s;
+  }
+
+  .menu-option {
+      margin: 15px;
   }
