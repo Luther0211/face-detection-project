@@ -122,7 +122,7 @@ class Demographics extends Component {
                 
                 <Form 
                     onInputSubmit={(e) => this.onSubmitHandler(e)}
-                    title="Demographics"
+                    title="Demographics Detector"
                 />
 
                 {msg}

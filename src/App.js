@@ -19,7 +19,6 @@ class App extends Component {
         
         const routes = (
             <main>
-                
                 <h1 className="mainTitle">SELECT A DETECTOR!</h1>   
             
                 <div className="menu"> 
@@ -35,6 +34,7 @@ class App extends Component {
         )
         
         return (
+
             <Switch>
                 <Route path="/demographics" component={() => <Demographics app={app}/>} />
                 <Route path="/colors" component={() => <Colors app={app} />} />

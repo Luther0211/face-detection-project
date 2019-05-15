@@ -52,7 +52,7 @@ class Colors extends Component {
                 
                 <Form 
                     onInputSubmit={(e) => this.onSubmitHandler(e)}
-                    title="Colors"
+                    title="Colors Detector"
                 />
 
                 {msg}
