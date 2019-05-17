@@ -18,7 +18,7 @@ const styles = theme => ({
   },
 });
 
-function SimpleExpansionPanel(props) {
+const SimpleExpansionPanel = props => {
   const { classes } = props;
   return (
     <div className={classes.root}>
