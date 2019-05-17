@@ -4,6 +4,7 @@ import Form from "../../Elements/Form/Form";
 import Results from "../../Elements/Results/Results";
 import Data from "./Data/Data"
 
+import ExpansionsResults from "../../Elements/ExpansionsResults/ExpansionsResults"
 
 class Demographics extends Component {
     state = {
@@ -93,26 +94,32 @@ class Demographics extends Component {
                 ? <Data dataName={age.name + " years old"} percentage={age.value} key={`age-${i}`} index={i} /> 
                 : null    
             )
-            age_appearance.unshift(<div className="data-instr" key="data-instr-age"> <span className="appearance">Age Appearance</span> <span className="probability">Probability %</span> </div>)
-            age_appearance.unshift(<h2 key="agekey" className="data-title">Age</h2>)
+            // age_appearance.unshift(<div className="data-instr" key="data-instr-age"> <span className="appearance">Age Appearance</span> <span className="probability">Probability %</span> </div>)
+            // age_appearance.unshift(<h2 key="agekey" className="data-title">Age</h2>)
 
             //GENDER
             gender_appearance = this.state.activeOutput.gender_appearance.concepts.map((gender, i) => {
                 return <Data dataName={gender.name} percentage={gender.value} key={`gender-${i}`} index={i} />
             })
-            gender_appearance.unshift(<div className="data-instr" key="data-instr-gender"> <span className="appearance">Gender Appearance</span> <span className="probability">Probability %</span> </div>)
-            gender_appearance.unshift(<h2 key="genderkey" className="data-title">Gender</h2>)
+            // gender_appearance.unshift(<div className="data-instr" key="data-instr-gender"> <span className="appearance">Gender Appearance</span> <span className="probability">Probability %</span> </div>)
+            // gender_appearance.unshift(<h2 key="genderkey" className="data-title">Gender</h2>)
 
             //multicultural Appearance
             multicultural_appearance = this.state.activeOutput.multicultural_appearance.concepts.map((culturalAp, i) => {
                 return <Data dataName={culturalAp.name} percentage={culturalAp.value} index={i} key={`multicultural-${i}`} />
             })
-            multicultural_appearance.unshift(<div className="data-instr" key="data-instr-cultural"> <span className="appearance">Multicultural Appearance</span> <span className="probability">Probability %</span> </div>)
-            multicultural_appearance.unshift(<h2 key="culturalkey" className="data-title">Multicultural Appearance</h2>)
+            // multicultural_appearance.unshift(<div className="data-instr" key="data-instr-cultural"> <span className="appearance">Multicultural Appearance</span> <span className="probability">Probability %</span> </div>)
+            // multicultural_appearance.unshift(<h2 key="culturalkey" className="data-title">Multicultural Appearance</h2>)
             
             //Final
             console.log(this.state.activeOutput)
-            DemographicsData = [...age_appearance, ...gender_appearance, ...multicultural_appearance]
+            // DemographicsData = [...age_appearance, ...gender_appearance, ...multicultural_appearance]
+            DemographicsData = 
+                <ExpansionsResults 
+                    AGE={age_appearance} 
+                    GENDER={gender_appearance} 
+                    MULTI={multicultural_appearance} 
+                />
         }
 
 
@@ -132,7 +139,7 @@ class Demographics extends Component {
                     boxes={boxResults}
                     DemographicsData={DemographicsData} 
                 />
-                
+
             </div>
         );
     }

@@ -5,7 +5,11 @@
 }
 
 .odd {
-    background-color: rgb(46, 63, 119);
+    background-color: #272727;
+}
+
+.even {
+    background-color: #363636;
 }
 
 .data-title {

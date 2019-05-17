@@ -5,7 +5,7 @@
 .result {
     max-width: 900px;
     width: 80vw;
-    border: 5px solid rgb(70, 86, 139);
+    /* border: 5px solid #EBEBEB; */
 }
 
 .result-image {

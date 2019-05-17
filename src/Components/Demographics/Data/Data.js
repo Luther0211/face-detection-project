@@ -13,7 +13,7 @@ export default ({dataName, percentage, index}) => {
 
         default:
             return(
-                <div className="data-bar">
+                <div className="data-bar even">
                     <span className="data-tag data-name">{dataName}</span>
                     <span className="data-tag data-value">{Math.round(percentage * 100)}%</span>
                 </div>
