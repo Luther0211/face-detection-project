@@ -5,23 +5,31 @@ import "./mainMenu.css"
 
 export default props => {
 
-    if(!props.backgroundImage) {
-        return (
-            <Link to={props.route} className="menu-option">
-                <div className="card" style={{backgroundColor: `black`  }} >
-                    <p className="card-title title" style={{backgroundColor: 'crimson'}}>{props.title}</p>
-                </div>
-            </Link>
-        )
+    let desc = "";
 
-    } else {        
-        return (
-            <Link to={props.route} className="menu-option">
-                <div className="card" style={{backgroundImage: `url(${props.backgroundImage})`  }} >
-                    <p className="card-title title">{props.title}</p>
-                </div>
-            </Link>
-        )
+    switch(true) {
+        case props.title === 'Demographics':
+            desc = 'Predict age, gender, and cultural appearance of detected faces';
+            break;
 
+        case props.title === 'Colors':
+            desc = 'Identify the dominant colors present in your media in hex or W3C form'
+            break;
+
+        default:
+            desc = "No Description"
+            break;
     }
+
+    return (
+        <Link to={props.route} className="menu-option">
+            <div className="card">
+                <div className="card__image" style={{backgroundImage: `url(${props.backgroundImage})`}} ></div>
+                <p className="card__title">{props.title}</p>
+                <p className="card__desc">
+                    {desc}
+                </p>
+            </div>
+        </Link>
+    )
 }

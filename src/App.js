@@ -19,15 +19,11 @@ class App extends Component {
         
         const routes = (
             <main>
-                <h1 className="mainTitle">SELECT A DETECTOR!</h1>   
+                <h1 className="mainTitle">Explore all our ready-to-use image recognition models to suit your specific needs!</h1>   
             
                 <div className="menu"> 
                     <MainMenu route='/demographics' title='Demographics' backgroundImage={'https://mumbrella.com.au/wp-content/uploads/2017/10/ThinkstockPhotos-587785374.jpg'} isActive={true} />
                     <MainMenu route='/colors' title='Colors' backgroundImage={'http://joco.name/wp-content/uploads/2014/03/rgb_2048_1.png'} />
-                    <MainMenu route='/' title='Coming Soon' />
-                    <MainMenu route='/' title='Coming Soon' />
-                    <MainMenu route='/' title='Coming Soon' />
-                    <MainMenu route='/' title='Coming Soon' />
                 </div>
             
             </main>
